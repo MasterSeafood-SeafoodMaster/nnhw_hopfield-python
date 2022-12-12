@@ -7,8 +7,8 @@ np.set_printoptions(threshold=sys.maxsize)
 #train = tk.loadData('Bonus_Training.txt')
 #test = tk.loadData('Bonus_Testing.txt')
 
-train = tk.loadData('Bonus_Training.txt')
-test = tk.loadData('Bonus_Testing.txt')
+train = tk.loadData('Basic_Training.txt')
+test = tk.loadData('Basic_Testing.txt')
 
 c, h, w = train.shape; n = h*w
 

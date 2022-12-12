@@ -24,8 +24,8 @@ class MyApp(tk.Tk):
 		self.setLabel("Train_Path", (20, 500))
 		self.setLabel("Test_Path", (20, 540))
 
-		self.setEntry(self.Train_Path, (200, 500), 'Basic_Training.txt', 30)
-		self.setEntry(self.Test_Path, (200, 540), 'Basic_Testing.txt', 30)
+		self.setEntry(self.Train_Path, (200, 500), 'Bonus_Training.txt', 30)
+		self.setEntry(self.Test_Path, (200, 540), 'Bonus_Testing.txt', 30)
 
 
 		self.setButton("Train!", (20, 600), self.Train)
@@ -42,9 +42,10 @@ class MyApp(tk.Tk):
 	def setButton(self, text, pos, fun):
 		button = tk.Button(self, text=text, font=("MV Boli", 16), command=fun)
 		button.place(x=pos[0], y=pos[1])
+
 	def Train(self):
-		train = ttk.loadData('Basic_Training.txt')
-		test = ttk.loadData('Basic_Testing.txt')
+		train = ttk.loadData(str(self.Train_Path.get()))
+		test = ttk.loadData(str(self.Test_Path.get()))
 		c, h, w = train.shape; n = h*w
 
 		hopfield = ttk.HopfieldNetwork(n)
